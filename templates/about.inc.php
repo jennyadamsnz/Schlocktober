@@ -1,8 +1,4 @@
-<?php
-  include "templates/master.inc.php";
-  function content(){
 
-?>
 <div class="row">
         <div class="col-sm-6 lead">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -14,7 +10,3 @@
           <img src="https://placekitten.com/700/400" class="img-responsive" alt="Kitten Image">
         </div>
       </div>
-
-<?php
-
-}

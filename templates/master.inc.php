@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Schlocktoberfest</title>
+    <title>Schlocktoberfest <?php echo "|" . $title; ?></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,21 +35,21 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="./">Home <span class="sr-only">(current)</span></a></li>
-              <li><a href=".\?page=about">About</a></li>
+              <li <?php if($page === "home"):?> class="active" <?php endif;?>><a href="./">Home <span class="sr-only">(current)</span></a></li>
+              <li <?php if($page === "about"):?> class="active" <?php endif;?>><a href=".\?page=about">About</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
 
       <?php
-        content();
+        $this->content();
 
       ?>
 
             <hr>
       <footer class="text-center">
-        <p>&copy; Copyright 2016 Schlocktoberfest Film Festival</p>
+        <p>&copy; Copyright <?php echo date('r');?> Schlocktoberfest Film Festival</p>
       </footer>
     </div>
 
