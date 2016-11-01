@@ -30,14 +30,12 @@
 
 				];
 			}
-			require "classes/HomeView.php";
 			$view = new HomeView(compact('moviesuggestions'));
 			$view->render();
 			break;
 
 		case'about':
 
-			require "classes/AboutView.php";
 			$view = new AboutView();
 			$view->render();
 
@@ -87,7 +85,6 @@
 			header("location:./");
 		} 
 		
-		require "classes/SuggesterEmailView.php";
 		$view = new SuggesterEmailView(compact('moviesuggestions'));
 		$view->render();
 
@@ -95,7 +92,6 @@
 		break;	
 
 		case 'movie':
-			require "classes/MovieSuggestionsSuccessView.php";
 			$view = new MovieSuggestionsSuccessView();
 			$view->render();
 		break;

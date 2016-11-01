@@ -1,20 +1,15 @@
 <?php
 
 	use Mailgun\Mailgun;
-	
-Class SuggesterEmailView {
-	public $data; 
 
-	public function __construct($data){
-		$this->data = $data;
-	}
+Class SuggesterEmailView extends View {
 
 	public function render(){
 		extract($this->data);
 		$this->sendEmail("templates/suggesteremail.inc.php");
 	}
 
-public function sendEmail($templateFile){
+	public function sendEmail($templateFile){
 
 		extract($this->data);
 
