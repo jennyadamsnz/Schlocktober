@@ -1,4 +1,6 @@
-
+<div class="row col-xs-12">
+        <h1>Schlocktoberfest <small>The best worst movie festival ever</small></h1>
+      </div>
 <div class="row">
         <div class="col-sm-6 lead">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

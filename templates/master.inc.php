@@ -37,6 +37,8 @@
             <ul class="nav navbar-nav">
               <li <?php if($page === "home"):?> class="active" <?php endif;?>><a href="./">Home <span class="sr-only">(current)</span></a></li>
               <li <?php if($page === "about"):?> class="active" <?php endif;?>><a href=".\?page=about">About</a></li>
+              <li <?php if($page === "movies"):?> class="active" <?php endif;?>><a href=".\?page=movies">Movies</a></li>
+              <li <?php if($page === "merchandise"):?> class="active" <?php endif;?>><a href=".\?page=merchandise">Merchandise</a></li>                           
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -49,7 +51,7 @@
 
             <hr>
       <footer class="text-center">
-        <p>&copy; Copyright <?php echo date('r');?> Schlocktoberfest Film Festival</p>
+        <p>&copy; Copyright <?php echo date('Y');?> Schlocktoberfest Film Festival</p>
       </footer>
     </div>
 

@@ -1,17 +1,19 @@
 <?php 
+namespace App\Views;
 
-Class HomeView extends View {
+Class MoviesView extends View 
+{
 
 	 public function render (){
-	 	$page = "home";
-	 	$title = " Home";
+	 	$page = "movies";
+	 	$title = " Movies List";
 	 	include "templates/master.inc.php";
 
 	 }
 
 	 public function content(){
 	 	extract($this->data);
-	 	include "templates/home.inc.php";
+	 	include "templates/movies.inc.php";
 
 	 }
 }

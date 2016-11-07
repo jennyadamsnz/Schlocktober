@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controllers;
+
 
 	$page = ! isset($_GET['page'])? "home" : $_GET['page'];
 
@@ -15,85 +17,48 @@
 	switch ($page) {
 		case 'home':
 
-		if(isset($_SESSION['moviesuggestions'])){
-			$moviesuggestions = $_SESSION['moviesuggestions'];
-		}else {
-			$moviesuggestions = [
-				'title' => "",
-				'email' => "",
-				'checkbox' => "",
-				'errors' => [
-					'title' => "",
-					'email' => "",
-					'checkbox' => "",
-					]
+			$controller = new HomeController();
+			$controller->show();
 
-				];
-			}
-			$view = new HomeView(compact('moviesuggestions'));
-			$view->render();
 			break;
 
 		case'about':
 
-			$view = new AboutView();
-			$view->render();
+			$controller = new AboutController();
+			$controller->show();
 
 			break;
 
+		case'movies':
+
+			$controller = new MoviesController();
+			$controller->showAll();
+
+			break;			
+
+		case'featuredmovie':
+
+			$controller = new MoviesController();
+			$controller->showfeaturedMovie();
+
+			break;			
+
 		case'moviesuggestions':
 
-		$_SESSION['moviesuggestions']= null;
+			$controller = new MovieSuggestController();
+			$controller->show();
 
-//moving form information in to movie suggestions variable
-
-			$moviesuggestions = [
-				'errors'=>[]
-			];
-			$expectedVariables = ['title','email','checkbox'];
-
-			foreach ($expectedVariables as $variable) {
-				//creating entries for error fields
-				$moviesuggestions['errors'][$variable]="";
-
-				//move all $_POST values into MovieSuggest array
-				if(isset($_POST[$variable])){
-					$moviesuggestions[$variable] = $_POST[$variable];
-				}else {
-					$moviesuggestions[$variable]="";
-				}
-			}
-
-//form validation
-
-	$errors = false;
-
-		if(strlen($moviesuggestions['title']) === 0){
-			$moviesuggestions['errors']['title']="Enter a title.";
-			$errors = true;
-		}
-
-		if (! filter_var($moviesuggestions['email'], FILTER_VALIDATE_EMAIL)) {
-			$moviesuggestions['errors']['email']="Enter a valid email.";
-	    	$errors = true;
-		}
-
-		if($errors === true){
-
-			$_SESSION['moviesuggestionsError'] = true;
-			$_SESSION['moviesuggestions'] = $moviesuggestions;
-			header("location:./");
-		} 
-		
-		$view = new SuggesterEmailView(compact('moviesuggestions'));
-		$view->render();
-
-		header("location:./?page=movie");
 		break;	
 
 		case 'movie':
-			$view = new MovieSuggestionsSuccessView();
-			$view->render();
+			$controller = new MovieSuggestController();
+			$controller->generateSuccessPage();
+		break;
+
+		case 'merchandise':
+			$controller = new MerchandiseController();
+			$controller->showAll();
+
 		break;
 
 		default:		

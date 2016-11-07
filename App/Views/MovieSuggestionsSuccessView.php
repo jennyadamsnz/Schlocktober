@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Views;
+
 Class MovieSuggestionsSuccessView extends View {
 
 	public function render(){

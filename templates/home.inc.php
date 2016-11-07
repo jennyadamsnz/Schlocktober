@@ -26,8 +26,8 @@
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
                   <input type="email" class="form-control" id="email" placeholder="Email" name="email" value=<?php echo $moviesuggestions ['email'];?>>
-                  <?php if(! empty($moviesuggest['errors']['email'])): ?>
-                  <span class="text-danger"><?php echo $moviesuggest['errors']['email']?></span>
+                  <?php if(! empty($moviesuggestions['errors']['email'])): ?>
+                  <span class="text-danger"><?php echo $moviesuggestions['errors']['email']?></span>
                 <?php endif;?>
                 </div>
               </div>
@@ -35,8 +35,8 @@
                 <label for="title" class="col-sm-2 control-label">Movie Title</label>
                 <div class="col-sm-10">
                   <input type="Text" class="form-control" id="title" placeholder="Troll 2" name="title">
-                  <?php if(! empty($moviesuggest['errors']['title'])): ?>
-                  <span class="text-danger"><?php echo $moviesuggest['errors']['title']?></span>
+                  <?php if(! empty($moviesuggestions['errors']['title'])): ?>
+                  <span class="text-danger"><?php echo $moviesuggestions['errors']['title']?></span>
                 <?php endif;?>
                 </div>
               </div>
