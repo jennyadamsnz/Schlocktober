@@ -5,16 +5,16 @@ namespace App\Controllers;
 
 	$page = ! isset($_GET['page'])? "home" : $_GET['page'];
 
-		//code above replaces if else statement below://
+		// code above replaces if else statement below://
 
-	  // if(! isset($_GET['page'])){
-	  // 	include "templates/home.inc.php";
-
-	  // }else {
-	  // 	include "templates/about.inc.php";
-	  // }
+	 //  if(! isset($_GET['page'])){
+	 //  	$page = $_GET['page'];
+	 //  } else {
+	 //  	$page = 'home';
+	 //  }
 
 	switch ($page) {
+
 		case 'home':
 
 			$controller = new HomeController();
@@ -58,6 +58,11 @@ namespace App\Controllers;
 		case 'merchandise':
 			$controller = new MerchandiseController();
 			$controller->showAll();
+
+		break;
+
+		case 'register':
+			echo "register page";
 
 		break;
 
