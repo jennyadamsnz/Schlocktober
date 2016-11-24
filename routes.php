@@ -62,7 +62,14 @@ namespace App\Controllers;
 		break;
 
 		case 'register':
-			echo "register page";
+			$controller = new RegisterController();
+			$controller->show();
+
+		break;
+
+		case 'register.store':
+			echo "<pre>";
+			print_r($_POST);
 
 		break;
 
